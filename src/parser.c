@@ -37,7 +37,7 @@ static op_t get_op(char c) {
 
 void parse_char(char c) {
   if (pos >= max_size ) {
-    printf("error: Program too big for memory."); 
+    fprintf(stderr, "error: Program too big for memory."); 
     exit(-1);
   }
 
