@@ -37,6 +37,8 @@ int main() {
 
   print(program,size);
 
+  execute(buffer, program, size);
+
   finish();
   return 0;
 }
