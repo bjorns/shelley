@@ -6,6 +6,9 @@
 
 #include "brainfuck.h"
 #include <stdio.h>
+#include <stdbool.h>
+
+bool debug = false;
 
 #define NAME(x) case x: return #x;
 char* get_name(op_t op) {

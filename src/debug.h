@@ -6,15 +6,12 @@
  * Copyright: Björn Skoglund
  */
 
+#pragma once
+
 #include "brainfuck.h"
+#include <stdbool.h>
 
-#define ENABLE_DEBUG 1
-
-#ifdef ENABLE_DEBUG
-#define DEBUG(x) printf(x)
-#else
-#define DEBUG(x)
-#endif
+extern bool debug;
 
 void print_op(op_t op);
 void print(op_t* program, int size);

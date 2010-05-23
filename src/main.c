@@ -16,6 +16,7 @@ static long* buffer;
 static op_t* program;
 
 void init() {
+  debug = false;
   buffer = (long*)malloc(BUFFER_SIZE*sizeof(long));
   program = (op_t*)malloc(MAX_PROGRAM_SIZE*sizeof(op_t));
   init_parser(program, MAX_PROGRAM_SIZE);
@@ -35,7 +36,9 @@ int main() {
   }
   int size = check_program();
 
-  print(program,size);
+  if (debug) {
+    print(program,size);
+  }
 
   execute(buffer, program, size);
 

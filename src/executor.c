@@ -34,7 +34,8 @@ static int pop() {
 
   
 static int execute_op(int pc) {
-  fprintf(stderr, "executing %s at %d\n", get_name(_program[pc]), pc);
+  if (debug) 
+    fprintf(stderr, "executing %s at %d\n", get_name(_program[pc]), pc);
   switch(_program[pc]) {
   case NEXT:
     ptr++;
@@ -76,7 +77,8 @@ void execute(long* buffer, op_t* program, int size) {
   ptr = 0;
   stack_ptr = 0;
 
-  fprintf(stderr,"Executing program of size %d\n", size);
+  if (debug) 
+    fprintf(stderr,"Executing program of size %d\n", size);
   while(pc < size) {
     pc = execute_op(pc);
   }
